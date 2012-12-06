@@ -1,0 +1,24 @@
+jquery-pages插件
+
+使用方法：
+1.需要分页显示的部分每条内容（标签）添加自定义属性"class=jquery_pages"（"jquery_pages"可随便另外定义，只要不产生冲突）
+2.调用方式：
+    $(function(){
+        $(".jquery_pages").pages();
+    })
+3.可选参数：
+    pernum      --Int型，设置每页显示条数，默认10条（10）
+    pages       --Int型，设置显示多少页码，默认3个页码数字（3）
+    extremity   --Bool型，设置是否显示“首页”，“尾页”，默认显示（true）
+    total       --Bool型，设置是否显示总页数，默认显示（true）
+    
+例：
+    //每页显示10条，显示3个页码，显示“共X页”，“首页”、“尾页”。
+    $(function(){
+        $(".jquery_pages").pages();
+    })
+    
+    //每页显示4条，显示4个页码，不显示“共X页”，不显示“首页”、“尾页”。
+    $(function(){
+        $(".jquery_pages").pages({'pernum': 4, 'pages': 4, 'extremity': true, 'total': true});
+    })

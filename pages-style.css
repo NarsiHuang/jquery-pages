@@ -1,0 +1,4 @@
+#jquery_pages_content {position:fixed; left:200px; top:400px; color: black;}
+#jquery_pages_content a{text-decoration: none; color: black}
+#jquery_pages_content a:hover{text-decoration: none; color: gray}
+#jquery_pages_content .current_page{font-weight: bold; color: gray}

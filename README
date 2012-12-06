@@ -20,5 +20,5 @@ jquery-pages插件
     
     //每页显示4条，显示4个页码，不显示“共X页”，不显示“首页”、“尾页”。
     $(function(){
-        $(".jquery_pages").pages({'pernum': 4, 'pages': 4, 'extremity': true, 'total': true});
+        $(".jquery_pages").pages({'pernum': 4, 'pages': 4, 'extremity': false, 'total': false});
     })

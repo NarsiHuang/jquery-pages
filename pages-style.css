@@ -1,4 +1,31 @@
-#jquery_pages_content {position:fixed; left:200px; top:400px; color: black;}
-#jquery_pages_content a{text-decoration: none; color: black}
-#jquery_pages_content a:hover{text-decoration: none; color: gray}
-#jquery_pages_content .current_page{font-weight: bold; color: gray}
+@CHARSET "UTF-8";
+#jquery_pages_content a{
+    border:solid 1px #9aafe5;
+    font-weight:normal;
+    color:#0e509e;
+    padding:1px 6px;
+    text-decoration:none;
+    width: 3px;
+    height: 3px;
+    font-size: 11px;
+}
+#jquery_pages_content a:hover{
+    border:solid 1px #0e509e;
+}
+#jquery_pages_content .current_page{
+    background:#2e6ab1;
+    color:#FFFFFF;
+    font-weight:bold;
+    border:solid 1px #9aafe5;
+    padding:1px 6px;
+    text-decoration:none;
+    line-height: 20px;
+    font-size: 11px;
+}
+#to_nth_page{
+    width: 20px;
+    height: 15px;
+}
+.to_nth_page{
+    float: right;
+}

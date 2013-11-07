@@ -12,14 +12,15 @@ jquery-pages插件
     position    --String型，设置插入页码标签的位置，默认插入在文档末尾（body）。
     extremity   --Bool型，设置是否显示“首页”，“尾页”，默认显示（true）。
     total       --Bool型，设置是否显示总页数，默认显示（true）。
+    nth_page    --Bool型，设置是否显示跳转至第 n 页，默认显示（true）。
     
 例：
-    //在文档末尾显示页码，每页显示10条，显示3个页码，显示“共X页”，“首页”、“尾页”。
+    //在文档末尾显示页码，每页显示10条，显示3个页码，显示“共X页”，“首页”，“尾页”，“跳转至第 n 页”。
     $(function(){
         $(".jquery_pages").pages();
     })
     
-    //在属性为“insert”的标签后显示页码，每页显示4条，显示4个页码，不显示“共X页”，不显示“首页”、“尾页”。
+    //在属性为“insert”的标签后显示页码，每页显示4条，显示4个页码，不显示“共X页”，不显示“首页”，“尾页”，“跳转至第 n 页”。
     $(function(){
-        $(".jquery_pages").pages({'pernum': 4, 'pages': 4, 'position': '.insert', 'extremity': false, 'total': false});
+        $(".jquery_pages").pages({'pernum': 4, 'pages': 4, 'position': '.insert', 'extremity': false, 'total': false , 'nth_page': false});
     })

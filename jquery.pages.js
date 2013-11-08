@@ -14,7 +14,7 @@
             position : 'body',      // 页码标签插入位置，默认文档最末
             extremity : true,       // 是否显示首尾页，默认显示
             total: true,            // 是否显示总页数，默认显示
-            to_page: true,          // 是否显示跳转到第 n 页，默认显示
+            nth_page: true,         // 是否显示跳转到第 n 页，默认显示
         };
         
         var opts = $.extend(defaults, options);
@@ -26,9 +26,9 @@
             $pernum = opts.pernum;                          //获取每页显示条数
             $pages_shownum = opts.pages;                    //获取显示页码数
             $pages_total = Math.ceil($num_total/$pernum);   //计算总页码数
-            
+
             $position = opts.position;                      //获取页码显示的位置
-            
+
             //如果设置显示页码数大于总页数
             if($pages_total < $pages_shownum){
                 $pages_shownum = $pages_total;
@@ -36,7 +36,7 @@
             //默认显示第一页
             $cur_page = 1;
             show_pages($cur_page);
-            
+
             //显示页码函数
             function show_pages($page){
                 //显示第n页内容
@@ -45,7 +45,7 @@
                 for(var i = $start-1; i < $pernum+$start-1; i++){
                     $element.eq(i).show();
                 }
-                
+
                 //显示页码
                 var $page_container = $("<div id='jquery_pages_content'></div>");
                 var $page_content = $("<span></span>");
@@ -53,7 +53,7 @@
                 var $page_content_html = "<span class='pages_total'>共 " + $pages_total + " 页 </span> ";
                 $page_content_html += "<span class='jquery_pages_first'><a href='javascript:void(0)' class='jquery_pages_first'>首页</a></span> ";
                 $page_content_html += "<a href='javascript:void(0)' class='jquery_pages_prevpage'>前页</a> ";
-                
+
                 //前几页的样式
                 if($cur_page < Math.ceil($pages_shownum/2)){
                     for(var i = 1; i < $pages_shownum+1; i++){
@@ -64,7 +64,7 @@
                         $page_content_html += " <a href='javascript:void(0)' class='to_page'>" + parseInt(i) + "</a> ";
                     }
                 }
-                
+
                 //后几页的样式
                 else if($cur_page > $pages_total-Math.floor($pages_shownum/2)){
                     for(var i = $pages_total-$pages_shownum+1; i < $pages_total+1; i++){
@@ -75,7 +75,7 @@
                         $page_content_html += " <a href='javascript:void(0)' class='to_page'>" + parseInt(i) + "</a> ";
                     }
                 }
-                
+
                 //中间页的样式
                 else{
                     var $page_start = $cur_page-(Math.ceil($pages_shownum/2)-1);
@@ -90,10 +90,10 @@
                 }
                 $page_content_html += " <a href='javascript:void(0)' class='jquery_pages_nextpage'>后页</a> ";
                 $page_content_html += " <span class='jquery_pages_last'> <a href='javascript:void(0)' class='jquery_pages_last'>尾页</a></span>";
-                
+
                 $page_content_html += " <span class='to_nth_page'>转到第 <input type='text' id='to_nth_page'> 页</span> ";
                 $page_content.html($page_content_html);
-                
+
                 //隐藏显示总页数首页尾页
                 if(!opts.extremity){
                     $(".jquery_pages_first").hide();
@@ -103,10 +103,10 @@
                     $(".pages_total").hide();
                 }
                 if(!opts.nth_page){
-                	$(".to_nth_page").hide();
+                    $(".to_nth_page").hide();
                 }
             }
-            
+
             // 下一页跳转
             $("body").on("click", ".jquery_pages_nextpage", function(){
                 $("#jquery_pages_content").remove();
@@ -132,7 +132,7 @@
             })
             // 尾页跳转
             $("body").on("click", ".jquery_pages_last", function(){
-            	$("#jquery_pages_content").remove();
+                $("#jquery_pages_content").remove();
                 $cur_page = $pages_total;
                 return show_pages($pages_total);
             })
